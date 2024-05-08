@@ -3,13 +3,13 @@ import { Banner, Card, Product, RecommendedList } from "./pages/home"
 
 function App() {
   return (
-    <div>     
+    <div>
       <Header />
       <main className="main">
         <Banner />
-       <RecommendedList/>
-        <Card/>
-        <Product/>
+        <RecommendedList />
+        <Card />
+        <Product />
       </main>
       <Footer />
     </div>
