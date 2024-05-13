@@ -4,7 +4,7 @@ import { CartIcon, CartIconWhite, HeartIcon, MenuIcon, MobileSearchIcon, SearchI
 
 function Header() {
     return (
-        <header className='header'>
+        <header className='relative z-50'>
             <div className="container">
                 <div className="header-wrapper">
                     <div className="flex items-center justify-between py-6 max-[900px]:py-3 max-md:hidden">
@@ -55,16 +55,18 @@ function Header() {
                     </div>
                     <div className="flex items-center justify-between my-6">
                         <div className="flex gap-14 max-md:flex-row-reverse max-md:gap-3">
-                            <Link className='flex items-center gap-2.5'>
+                            <Link to={'/'} className='flex items-center gap-2.5'>
                                 <img src="/site.logo.png" alt="site logo" />
                                 <p className="text-3xl font-bold max-md:text-xl">Playnchill</p>
                             </Link>
-                            <button className="mr-3">
-                                <MenuIcon />
-                            </button>
+                            <Link to={'/categories'} className='flex'>
+                                <button className="mr-3">
+                                    <MenuIcon />
+                                </button>
+                            </Link>
                         </div>
-                        <form className='relative'>
-                            <input type="text" id='search' placeholder='Поиск' className='w-[648px] max-[1060px]:w-96 max-[800px]:w-60 max-md:hidden py-6 pl-7 bg-slate-950 border-black rounded-2xl' />
+                        <form className='relative flex items-center'>
+                            <input type="text" id='search' placeholder='Поиск' className='w-[648px] max-[1060px]:w-96 max-[800px]:w-60 max-md:hidden py-6 pl-7 bg-slate-950 border border-solid border-slate-700 rounded-2xl' />
                             <label htmlFor="search" className='absolute right-0 p-4 max-md:hidden'>
                                 <SearchIcon />
                             </label>
@@ -73,7 +75,9 @@ function Header() {
                         <div className='flex gap-4'>
                             <button className='max-sm:hidden'><HeartIcon /></button>
                             <button className='hidden max-sm:block'><MobileSearchIcon /></button>
-                            <button className='max-sm:hidden'><CartIcon /></button>
+                            <Link to={'/cart'} className='flex'>
+                                <button className='max-sm:hidden'><CartIcon /></button>
+                            </Link>
                             <button className='hidden max-sm:block'><CartIconWhite /></button>
                         </div>
                     </div>

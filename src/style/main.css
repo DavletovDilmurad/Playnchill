@@ -98,7 +98,12 @@ body {
 .swiper-slide {
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
+}
+
+.swiper-slide.two {
+    display: flex;
+    align-items: end;
 }
 
 .swiper-slide img {
@@ -106,4 +111,25 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.swiper-slide .banner-content__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    padding: 30px;
+    border-radius: 50%;
+    backdrop-filter: blur(20px);
+}
+
+@media (prefers-color-scheme: light) {
+    .theme-b.adaptive {
+        background: #bcd;
+        color: #334;
+        outline: 5px dotted #000;
+    }
 }
